@@ -101,6 +101,11 @@ async def uptime_command(ctx):
         color=discord.Color.blue())
     await ctx.send(embed=embed)
 
+@commands.command(name="r34ping")
+async def test_rule34_ping(self, ctx):
+    async with self.session.get("https://rule34.xxx") as resp:
+        await ctx.send(f"Rule34 status code: {resp.status}")
+
 
 @bot.command(name="ping")
 async def ping_command(ctx):
